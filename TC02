@@ -1,0 +1,33 @@
+package Project;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class login {
+	
+	@FindBy(xpath="//input[@type='text']") private WebElement uname;
+	@FindBy(xpath="//input[@type='password']") private WebElement pswd;
+	@FindBy(xpath="//button[@type='submit']") private WebElement login;
+	
+	login(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void Enter_uname(String name)
+	{
+		uname.sendKeys(name);
+	}
+
+	public void Enter_pswd(String pass)
+	{
+		pswd.sendKeys(pass);
+	}
+	
+	public void clickBtn()
+	{
+		login.click();
+	}
+}
