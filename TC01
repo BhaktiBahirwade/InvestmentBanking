@@ -1,0 +1,32 @@
+package Project;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+
+public class Runner {
+	public static void main(String[] args) throws InterruptedException {
+		util u=new util();
+		WebDriver driver = u.config();
+		
+		login l=new login(driver);
+		pin p=new pin(driver);
+		mainPage mp=new mainPage(driver);
+		
+		
+		l.Enter_uname("YP3870");
+		l.Enter_pswd("sagaritman@12345");
+		l.clickBtn();
+		Thread.sleep(2000);
+		
+		p.pnum("741258");
+		p.clckBtn();
+		Thread.sleep(2000);
+		mp.m1();
+		
+		
+	
+	}
+	
+	
+
+}
